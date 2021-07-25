@@ -19,7 +19,7 @@ import { filter } from 'bluebird';
     const { image_url } = req.query;
 
     if (!image_url) {
-      return res.status(400).send({ message: `Query parameter imageUrl is missing` });
+      return res.status(422).send({ message: `Query parameter imageUrl is missing` });
     }
 
     const filteredpath = await filterImageFromURL(image_url);
